@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainBackgroundColor: #BDFEB6;
+
+    --boxesColor: #48BF53;
+}
+
+body {
+    background-color: var(--mainBackgroundColor);
+}
+
+/* top bar css */
+
+#main_div {
+    width: 370px;
+    height: 700px;
+
+    position: relative;
+    left: 4px;
+
+}
+
+#viewingdiv {
+    width: 100%;
+    height: 300px;
+    background-color: var(--boxesColor);
+    border-radius: 15px;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.buttons {
+    background-color: var(--boxesColor);
+    border-radius: 10px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+}
+
+.buttons h2 {
+    margin-top: 4px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.buttons2 h2 {
+    margin-top: 22px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#timeSlots_div {
+    top: 340px;
+    left: 10px;
+    width: 350px;
+    height: 40px;
+}
+
+#meetsSettings {
+    top: 400px;
+    left: 10px;
+    width: 110px;
+    height: 110px;
+}
+
+#editMeets {
+    top: 400px;
+    left: 130px;
+    width: 110px;
+    height: 110px;
+}
+
+#match {
+    top: 400px;
+    left: 250px;
+    width: 110px;
+    height: 110px;
+}

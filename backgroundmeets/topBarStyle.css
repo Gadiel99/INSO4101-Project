@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainBackgroundColor: #BDFEB6;
+
+    --boxesColor: #48BF53;
+}
+
+#topBar_div {
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    width: 370px;
+    height: 90px;
+    position: relative;
+
+}
+
+#topBar_div a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+
+#topBar_div h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.topBarBoxStyle {
+    background-color: var(--boxesColor);
+    width: 179px;
+    height: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 10px;
+    position: absolute;
+    padding: 10px 20px 20px 10px;
+}
+
+#topBarName {
+    left: 4px
+}
+
+
+
+#topBarIcons {
+    left: 187px;
+    padding: 0;
+}
+
+.icons {
+    background-color: black;
+    border-radius: 20px;
+    width: 45px;
+    height: 50px;
+    position: absolute;
+    top: 18px
+}
+
+#accountIcon {
+    left: 6px;
+}
+
+#aboutIcon {
+    left: 64px;
+}
+
+#settingsIcon {
+    left: 122px;
+}

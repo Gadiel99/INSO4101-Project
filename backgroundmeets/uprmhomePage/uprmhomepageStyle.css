@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainBackgroundColor: #BDFEB6;
+
+    --boxesColor: #48BF53;
+}
+
+body {
+    background-color: var(--mainBackgroundColor);
+}
+
+/* top bar css */
+
+#main_div {
+    width: 370px;
+    height: 700px;
+
+    position: relative;
+    left: 4px;
+}
+
+#uprm_div {
+    width: 100%;
+    height: 100px;
+    background-color: var(--boxesColor);
+    border-color: white;
+    border-width: 3px;
+    border-radius: 30px;
+    border-style: solid;
+}
+
+#enrollmentTab_div {
+    margin-top: 70px;
+    width: 100%;
+    height: 200px;
+    background-color: var(--boxesColor);
+    border-color: white;
+    border-width: 3px;
+    border-radius: 30px;
+    border-style: solid;
+
+}
+
+
+.leftright {
+    margin-top: 10px;
+    position: absolute;
+    left: 4px;
+
+    width: 179px;
+    height: 200px;
+
+
+}
+
+#left_div {
+    left: 4px;
+}
+
+#right_div {
+    left: 187px;
+}
+
+#left_div a {
+    text-decoration: none;
+}
+
+#pairUpButton_div {
+    margin-top: 90px;
+    background-color: var(--boxesColor);
+
+    width: 100%;
+    height: 100px;
+    border-radius: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+}
+
+#pairUpButton_div h2 {
+    color: white;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.rightbuttons {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    border-radius: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    background-color: var(--boxesColor);
+}
+
+.rightbuttons h2 {
+    margin-top: 8px;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#notificationsTab_div {
+    top: 20px;
+}
+
+#meetsScheduledTab_div {
+    top: 80px;
+}
+
+#matchesPendingTab_div {
+    top: 140px;
+}
