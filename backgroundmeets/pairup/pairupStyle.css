@@ -11,9 +11,6 @@
     --boxesColor: #48BF53;
 }
 
-body {
-    background-color: var(--mainBackgroundColor);
-}
 
 /* top bar css */
 
@@ -87,4 +84,13 @@ body {
     left: 250px;
     width: 110px;
     height: 110px;
+}
+
+#backToHomePage {
+
+    width: 60%;
+    top: 525px;
+    height: 40px;
+    margin-left: 20%;
+
 }

@@ -11,9 +11,6 @@
     --boxesColor: #48BF53;
 }
 
-body {
-    background-color: var(--mainBackgroundColor);
-}
 
 /* top bar css */
 #topBar_div {
@@ -37,39 +34,33 @@ body {
     padding: 10px 20px 20px 10px;
 }
 
-#topBarName {
-    left: 4px
+#main_div {
+    width: 370px;
+    height: 700px;
+
+    position: relative;
+    left: 4px;
 }
 
-#topBarName a {
-    color: white;
+a {
     text-decoration: none;
-    font-size: x-large;
-
 }
 
-#topBarIcons {
-    left: 187px;
-    padding: 0;
-}
-
-.icons {
-    background-color: black;
-    border-radius: 20px;
-    width: 45px;
+#toPairUp_div {
+    width: 100%;
     height: 50px;
-    position: absolute;
-    top: 18px
+    margin-top: 10px;
+    background-color: var(--boxesColor);
+    color: white;
+    border-width: 3px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: white;
 }
 
-#accountIcon {
-    left: 6px;
-}
-
-#aboutIcon {
-    left: 64px;
-}
-
-#settingsIcon {
-    left: 122px;
+#toPairUp_div h2 {
+    margin-top: 10px;
+    width: 100%;
+    font-size: x-large;
+    text-align: center;
 }

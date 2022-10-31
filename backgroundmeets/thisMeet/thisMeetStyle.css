@@ -11,9 +11,7 @@
     --boxesColor: #48BF53;
 }
 
-body {
-    background-color: var(--mainBackgroundColor);
-}
+
 
 /* top bar css */
 #topBar_div {

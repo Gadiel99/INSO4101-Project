@@ -1,0 +1,14 @@
+:root {
+    --mainBackgroundColor: #BDFEB6;
+    --boxesColor: #48BF53;
+    width: 393px;
+    height: 852px;
+    background-color: black;
+}
+
+body {
+    background-image: url(./backgroundpic.png);
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+
+}

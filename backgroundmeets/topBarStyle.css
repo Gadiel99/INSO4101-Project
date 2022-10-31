@@ -9,10 +9,14 @@
     --mainBackgroundColor: #BDFEB6;
 
     --boxesColor: #48BF53;
+
 }
 
+
+
 #topBar_div {
-    margin-top: 30px;
+    position: relative;
+    top: 15px;
     margin-bottom: 20px;
 
     width: 370px;
@@ -22,13 +26,17 @@
 }
 
 #topBar_div a {
+
     color: white;
     text-decoration: none;
     font-size: large;
+    text-shadow: 2px 2px 2px black;
 }
 
 #topBar_div h2 {
+
     width: 100%;
+
     text-align: center;
 }
 
@@ -53,6 +61,7 @@
 #topBarIcons {
     left: 187px;
     padding: 0;
+    height: 56px;
 }
 
 .icons {
@@ -61,7 +70,7 @@
     width: 45px;
     height: 50px;
     position: absolute;
-    top: 18px
+    top: 1px
 }
 
 #accountIcon {
