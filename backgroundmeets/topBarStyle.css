@@ -73,6 +73,12 @@
     top: 1px
 }
 
+i {
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: larger;
+}
+
 #accountIcon {
     left: 6px;
 }

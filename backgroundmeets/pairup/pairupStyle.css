@@ -33,6 +33,81 @@
     border-style: solid;
 }
 
+#scheduledAndPendingButtons {
+    position: relative;
+
+}
+
+.viewingbuttons {
+    position: absolute;
+    margin-top: 10px;
+    width: 185px;
+    height: 75px;
+    background-color: var(--boxesColor);
+    border-radius: 30px;
+    border-color: black;
+    border-width: 2px;
+    border-style: dashed;
+    color: white;
+    font-size: small;
+}
+
+.viewingbuttons h2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#viewScheduledMeets {
+    background-color: #4EEF8A;
+}
+
+#viewPendingMeets {
+    left: 185px;
+    background-color: #11823B;
+}
+
+#scheduledAndPendingViews {
+    position: relative;
+    margin-top: 90px;
+}
+
+#viewingPending,
+#viewingScheduled {
+    position: absolute;
+    width: 90%;
+    border: 2px solid white;
+    margin-left: 5%;
+    margin-top: 10px;
+    height: 180px;
+    background-color: #c67504;
+}
+
+#viewingScheduled {
+    background-color: rgb(17, 69, 19);
+
+}
+
+#viewingPending {
+    opacity: 0;
+}
+
+#scheduledAndPendingViews p {
+
+    color: white;
+    font-size: small;
+
+}
+
+ul {
+    margin-left: 30px;
+}
+
+li {
+    margin-top: 10px;
+}
+
+
 .buttons {
     background-color: var(--boxesColor);
     border-radius: 10px;
