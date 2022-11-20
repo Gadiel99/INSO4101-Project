@@ -10,7 +10,9 @@ function Match(props) {
                 <h1>Match</h1>
             </div>
             <NavBar />
-            <button onClick={() => { navigate("/UprmHomePage/PairUp") }}>Pair Up</button>
+            <div class="UHPbuttonsDiv">
+                <button onClick={() => { navigate("/UprmHomePage/PairUp") }}>Pair Up</button>
+            </div>
             <div id="otherCard"></div>
             <button>decline</button>
             <button>accept</button>

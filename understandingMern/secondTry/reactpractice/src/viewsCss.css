@@ -1,0 +1,173 @@
+.UHPbuttonsDiv {
+    height: 250px;
+    width: 90%;
+
+    background-color: rgba(202, 118, 97, 0.747);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    justify-content: center;
+
+}
+
+
+
+.UHPbuttonsDiv button {
+    height: 50px;
+    width: 90%;
+
+    color: rgba(30, 27, 27, 0.854);
+    font-size: larger;
+    margin: auto auto;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    border-color: #d85e39ba;
+    border-radius: 5px;
+}
+
+button {
+    background-color: transparent;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    border-color: #282c34;
+    border-radius: 5px;
+}
+
+.pageName {
+    width: 100%;
+    height: 20%;
+    text-shadow: #a95c44 4px 4px 10px;
+    background-color: #a2aab9b6;
+    opacity: 0.8;
+
+}
+
+.pageName h1 {
+    color: rgba(81, 18, 14, 0.934);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 0px;
+}
+
+#legacy {
+    margin-top: 3px;
+}
+
+.thoseTwoLines {
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background-color: #282c34;
+}
+
+#topLine {
+    top: 3.5%;
+}
+
+#lowerLine {
+    top: 96%;
+}
+
+
+
+@keyframes spinBG {
+    0% {
+        background-size: 3000px 3000px;
+    }
+
+    25% {
+        background-size: 4000px 4000px;
+    }
+
+    50% {
+        background-size: 3000px 3000px;
+    }
+
+    75% {
+        background-size: 500px 500px;
+    }
+
+    90% {
+        background-size: 100px 100px;
+    }
+
+    100% {
+        background-size: 3000px 3000px;
+    }
+}
+
+#mainDiv {
+    max-width: 400px;
+    min-width: 300px;
+    max-height: 900px;
+    min-height: 800px;
+
+    background-color: rgba(79, 33, 27, 0.701);
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* justify-content: center; */
+    border: 2px dashed #8693ae;
+}
+
+
+#navBar {
+    width: 370px;
+    height: 85px;
+    background-color: #a2aab9b6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 25%;
+}
+
+#navBar button {
+    background-color: transparent;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    opacity: 0.8;
+
+}
+
+#homeIcon {
+    background-image: url('./logo.png');
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+#accountIcon {
+    background-image: url('./accountIcon.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+
+#aboutIcon {
+    background-image: url('./aboutIcon.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+
+#settingsIcon {
+    background-image: url('./settingsIcon.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
