@@ -9,6 +9,7 @@ function TimeSlots(props) {
             <div className="pageName">
                 <h1>Time Slots</h1>
             </div>
+
             <NavBar />
             <button onClick={() => { navigate("/UprmHomePage/PairUp") }}>Pair Up</button>
             <div id="timeSlotsCalendar"></div>
