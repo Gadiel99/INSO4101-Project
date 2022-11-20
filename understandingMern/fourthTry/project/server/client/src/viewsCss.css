@@ -1,0 +1,31 @@
+.UHPbuttonsDiv {
+    height: 250px;
+    width: 90%;
+
+    background-color: rgba(202, 118, 97, 0.747);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    justify-content: center;
+
+}
+
+
+
+.UHPbuttonsDiv button {
+    height: 50px;
+    width: 90%;
+
+    color: rgba(30, 27, 27, 0.854);
+    font-size: larger;
+    margin: auto auto;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    border-color: #d85e39ba;
+    border-radius: 5px;
+}

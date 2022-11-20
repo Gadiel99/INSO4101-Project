@@ -1,4 +1,4 @@
-import HomePage from './/views/HomePage.js';
+import HomePage from './/views/HomePage';
 import UprmHomePage from './/views/UprmHomePage';
 import Login from './/views/Login';
 import About from './/views/About'
