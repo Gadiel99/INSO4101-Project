@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 body {
@@ -135,6 +134,7 @@ button {
 }
 
 #homeIcon {
+  background-image: url('.//images/logo.png');
   background-position: center;
   background-size: cover;
 
@@ -142,21 +142,21 @@ button {
 }
 
 #accountIcon {
-  background-image: url('./images/accountIcon.jpg');
+  background-image: url('.//images/accountIcon.jpg');
   background-position: center;
   background-size: cover;
 
 }
 
 #aboutIcon {
-  background-image: url('./images/aboutIcon.jpg');
+  background-image: url('.//images/aboutIcon.jpg');
   background-position: center;
   background-size: cover;
 
 }
 
 #settingsIcon {
-  background-image: url('./images/settingsIcon.jpg');
+  background-image: url('.//images/settingsIcon.jpg');
   background-position: center;
   background-size: cover;
 

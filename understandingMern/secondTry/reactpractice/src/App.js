@@ -1,3 +1,4 @@
+//component imports
 import HomePage from './/views/HomePage';
 import UprmHomePage from './/views/UprmHomePage';
 import Login from './/views/Login';
@@ -16,10 +17,19 @@ import MeetStarted from './/views/MeetStarted';
 import EndOfMeetSurvey from './/views/EndOfMeetSurvey';
 import ErrorPage from './/views/ErrorPage';
 
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+
+//css imports
 import './App.css';
 import './viewsCss.css';
+
+//state use import
+import { useState } from 'react';
+
+
+//routers import
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 function App() {
     return (
