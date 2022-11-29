@@ -8,12 +8,18 @@ const app = express()
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: '/auth/google/callback',
+    proxy: true
 },
-    (accessToken, refreshToken, profile, email) => {
-        console.log(accessToken)
-        console.log(refreshToken)
-        console.log(profile)
+    async (accessToken, refreshToken, profile, done) => {
+
+        // const existingUser = await User.findOne({ googleId: profile.id })
+
+        // if (existingUser) {
+        //     return done(null, existingUser)
+        // }
+        // const user = await new User({ googleId: profile.id }).save()
+        // done(null, user)
 
     })
 );
@@ -23,6 +29,16 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'))
+
+
+app.get('api/logout', (req, res) => {
+    req.logout()
+    res.send(req.user)
+})
+
+app.get('/api/current_user', (req, res) => {
+    res.send(req.user)
+})
 
 
 const PORT = process.env.PORT || 5000

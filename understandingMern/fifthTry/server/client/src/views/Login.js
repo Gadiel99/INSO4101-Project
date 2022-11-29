@@ -10,7 +10,7 @@ function Login(props) {
                 <h1>Login</h1>
             </div>
             <NavBar />
-            <a href="http://localhost:5000/auth/google"> Sign in with google</a>
+            <a href="/auth/google"> Sign in with google</a>
             <button onClick={() => { navigate("/UprmHomePage") }}>Uprm Home Page</button>
 
         </>

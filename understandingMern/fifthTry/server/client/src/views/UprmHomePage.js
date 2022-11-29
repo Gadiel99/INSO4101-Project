@@ -13,7 +13,7 @@ function UprmHomePage(props) {
 
             <div height="20%" width="" id="UniversityDiv"></div>
             <div id="EnrollmentSwitchDiv"></div>
-            <div class="UHPbuttonsDiv">
+            <div className="UHPbuttonsDiv">
 
 
                 <button onClick={() => { navigate("/UprmHomePage/Notifications") }}>Notifications</button>

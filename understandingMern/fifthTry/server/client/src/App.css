@@ -100,7 +100,7 @@ button {
   max-height: 900px;
   min-height: 800px;
 
-  background-color: rgba(79, 33, 27, 0.701);
+  background-color: rgba(137, 104, 100, 0.701);
 
   margin: auto;
   display: flex;
@@ -111,6 +111,15 @@ button {
   border: 2px dashed #8693ae;
 }
 
+#mainDiv button {
+  color: white;
+
+}
+
+#mainDiv a {
+  color: white;
+  font-size: larger;
+}
 
 #navBar {
   width: 370px;
