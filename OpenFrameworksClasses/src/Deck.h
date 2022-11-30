@@ -12,27 +12,18 @@
 #include "ListCard.h"
 #include "MatchCard.h"
 
-class Deck
-{
+class Deck{
 public:
-    
-    class DeckLogicHandler
-    {
-
+    class DeckLogicHandler{
     public:
         Deck *deck;
-        DeckLogicHandler(Deck *deck_)
-        {
-            deck = deck_;
-        }
-        void update()
-        {
+            DeckLogicHandler(Deck *deck_){deck = deck_;}
+        void update(){
+            
             handleButtons();
 
-            if (deck->showingTimeSlots)
-            {
-                deck->currentUser->timeSlots->update();
-            }
+            if (deck->showingTimeSlots){
+                deck->currentUser->timeSlots->update();}
 
             checkForMatches();
 
@@ -44,155 +35,109 @@ public:
             deck->matchesCard->updateCard(deck->currentUser->matches);
         }
 
-        void newUser(int id)
-        {
-            deck->allUsers->push_back(new User(id));
-        }
+        void handleButtons(){
+        if (deck->addUser->clicked){
+            deck->addUser->clicked = false;
 
-        void handleButtons()
-        {
-            if (deck->addUser->clicked)
-            {
                 newUser(deck->allUsers->size());
-                deck->addUser->clicked = false;
-            }
-            else if (deck->switchUser->clicked)
-            {
-                deck->currentUserId++;
+                if (deck->userToEval->name == "Dummy"){
+                    deck->userToEval = deck->allUsers->at(deck->allUsers->size()-1);}} 
 
-                if (deck->currentUserId == deck->allUsers->size())
-                {
-                    deck->currentUserId = 0;
-                }
+        else
+        if (deck->switchUser->clicked){
+        deck->switchUser->clicked = false;
+
+                deck->currentUserId++;
+                if (deck->currentUserId == deck->allUsers->size()){
+                    deck->currentUserId = 0;}
 
                 deck->currentUser = deck->allUsers->at(deck->currentUserId);
 
-                if (deck->currentUser->userToEvalId == deck->allUsers->size())
-                {
-                    deck->userToEval = deck->noMoreUsers;
-                }
-                else
-                {
-                    deck->userToEval = deck->allUsers->at(deck->currentUser->userToEvalId);
-                }
-                deck->showingTimeSlots = false;
-
-                deck->switchUser->clicked = false;
-            }
-            else if (deck->viewTimeSlots->clicked)
-            {
-                deck->showingTimeSlots = !deck->showingTimeSlots;
-
-                deck->viewTimeSlots->clicked = false;
-            }
+                if (deck->currentUser->userToEvalId == deck->allUsers->size()){
+                    deck->userToEval = deck->noMoreUsers;}
+                else {
+                    deck->userToEval = deck->allUsers->at(deck->currentUser->userToEvalId);}}
             
-            else if (deck->declineUser->clicked)
-            {
-                deck->declineUser->clicked = false;
-                if (deck->currentUser->userToEvalId == deck->allUsers->size())
-                {
-                    return;
-                }
+        else
+        if (deck->viewTimeSlots->clicked){
+            deck->viewTimeSlots->clicked = false;
+                
+                deck->showingTimeSlots = !deck->showingTimeSlots;}
+            
+        else 
+        if (deck->declineUser->clicked){
+            deck->declineUser->clicked = false;
+                
+                if (deck->currentUser->userToEvalId == deck->allUsers->size()){
+                    return;}
 
                 deck->currentUser->declinedUsers->push_back(deck->allUsers->at(deck->currentUser->userToEvalId));
 
                 deck->currentUser->userToEvalId++;
 
-                if (deck->currentUser->userToEvalId == deck->allUsers->size())
-                {
+                if (deck->currentUser->userToEvalId == deck->allUsers->size()){
                     deck->userToEval = deck->noMoreUsers;
-                    return;
-                }
-                deck->userToEval = deck->allUsers->at(deck->currentUser->userToEvalId);
-            }
-            else if (deck->acceptUser->clicked)
-            {
-                deck->acceptUser->clicked = false;
-                if (deck->currentUser->userToEvalId == deck->allUsers->size())
-                {
-                    return;
-                }
-                if (deck->currentUser->id == deck->currentUser->userToEvalId)
-                {
+                    return;}
+                
+                deck->userToEval = deck->allUsers->at(deck->currentUser->userToEvalId);}
+            
+        else 
+        if (deck->acceptUser->clicked){
+            deck->acceptUser->clicked = false;
+                
+                if (deck->currentUser->userToEvalId == deck->allUsers->size()){
+                    return;}
+
+                if (deck->currentUser->id == deck->currentUser->userToEvalId){
                     deck->declineUser->clicked = true;
                     handleButtons();
-                    return;
-                }
+                    return;}
 
                 deck->currentUser->acceptedUsers->push_back(deck->allUsers->at(deck->currentUser->userToEvalId));
-
                 deck->currentUser->userToEvalId++;
 
-                if (deck->currentUser->userToEvalId == deck->allUsers->size())
-                {
+                if (deck->currentUser->userToEvalId == deck->allUsers->size()){
                     deck->userToEval = deck->noMoreUsers;
-                    return;
-                }
-                deck->userToEval = deck->allUsers->at(deck->currentUser->userToEvalId);
-            }
-        }
+                    return;}
+                deck->userToEval = deck->allUsers->at(deck->currentUser->userToEvalId);}
+        };
 
-        void checkForMatches()
-        {
-
+        void checkForMatches(){
             vector<string> currUserAvailableTimeSlots = deck->currentUser->timeSlots->getAvailableTimeSlots();
-            if (currUserAvailableTimeSlots.size() == 0)
-            {
-                return;
-            }
+            if (currUserAvailableTimeSlots.size() == 0){
+                return;}
 
             if (deck->currentUser->acceptedUsers->empty())
-            {
-                return;
-            }
+            {return;}
 
-            for (User *acceptedUser : *deck->currentUser->acceptedUsers)
-            {
+            for (User *acceptedUser : *deck->currentUser->acceptedUsers){
                 bool bothAcceptedEachOther = false;
                 if (acceptedUser->acceptedUsers->empty())
-                {
-                    continue;
-                }
+                {continue;}
                 else
-                {
-                    for (User *acceptedUserAcceptedUser : *acceptedUser->acceptedUsers)
-                    {
-                        if (acceptedUserAcceptedUser->id == deck->currentUser->id)
-                        {
-                            bothAcceptedEachOther = true;
-                        }
-                    }
+                {for (User *acceptedUserAcceptedUser : *acceptedUser->acceptedUsers){
+                    if (acceptedUserAcceptedUser->id == deck->currentUser->id)
+                    {bothAcceptedEachOther = true;}}
                 }
                 if (!bothAcceptedEachOther)
-                {
-                    continue;
-                }
+                {continue;}
+
 
                 vector<string> acceptedUserAvailableTimeSlots = acceptedUser->timeSlots->getAvailableTimeSlots();
                 if (acceptedUserAvailableTimeSlots.size() == 0)
-                {
-                    continue;
-                }
+                {continue;}
+                
                 string timeSlotInCommon = "";
-                for (string currTS : currUserAvailableTimeSlots)
-                {
-                    for (string accTS : acceptedUserAvailableTimeSlots)
-                    {
-                        if (currTS == accTS)
-                        {
+
+                for (string currTS : currUserAvailableTimeSlots){
+                    for (string accTS : acceptedUserAvailableTimeSlots){
+                        if (currTS == accTS){
                             timeSlotInCommon = currTS;
-                            break;
-                        }
-                    }
-                    if (timeSlotInCommon != "")
-                    {
-                        break;
-                    }
-                }
-                if (timeSlotInCommon == "")
-                {
-                    continue;
-                }
+                            break;}
+                    } if (timeSlotInCommon != ""){
+                        break;}
+                } if (timeSlotInCommon == ""){
+                    continue;}
 
                 string name1 = deck->currentUser->name;
 
@@ -210,6 +155,7 @@ public:
                 newEnd3 = remove(currUserAvailableTimeSlots.begin(), currUserAvailableTimeSlots.end(), timeSlotInCommon);
             };
         }
+        void newUser(int id){deck->allUsers->push_back(new User(id));}
     };
 
     int currentUserId;
@@ -235,9 +181,7 @@ public:
     bool showingTimeSlots = false;
 
     Deck::DeckLogicHandler *handler;
-    Deck()
-    {
-
+    Deck(){
         noMoreUsers = new User(-1);
         noMoreUsers->name = "Dummy";
         // initialize users
@@ -272,30 +216,23 @@ public:
         handler = new Deck::DeckLogicHandler(this);
     }
 
-    void render()
-    {
+    void render(){
         ofSetColor(0);
         ofFill();
         ofDrawRectangle(0, 0, 1000, 1000);
-
-        if (showingTimeSlots)
-        {
+        if (showingTimeSlots){
             currentUser->timeSlots->render();
             viewTimeSlots->render();
-            return;
-        }
+        return;}
 
         currUserCard->render();
         userToEvalCard->render();
-
         allUsersCard->render();
         acceptedUsersCard->render();
         declinedUsersCard->render();
         matchesCard->render();
 
-        for (Button *btn : buttons)
-        {
-            btn->render();
-        }
+        for (Button *btn : buttons){
+            btn->render();}
     }
 };

@@ -23,46 +23,30 @@ public:
 
     vector<string> hoursStrings;
 
-    vector<string> getAvailableTimeSlots()
-    {
-
+    vector<string> getAvailableTimeSlots(){
         vector<string> availableTimeSlots;
-
-        for (std::map<string, tuple<vector<Button *> *, vector<bool> *> *>::iterator it = daysButtons.begin(); it != daysButtons.end(); ++it)
-        {
-
-            for (int i = 0; i < get<0>(*it->second)->size(); i++)
-            {
-                if (get<1>(*it->second)->at(i) == true)
-                {
-                    availableTimeSlots.push_back(it->first + hoursStrings.at(i));
-                }
-            }
-        }
+        for (std::map<string, tuple<vector<Button *> *, vector<bool> *> *>::iterator it = daysButtons.begin(); it != daysButtons.end(); ++it){
+            for (int i = 0; i < get<0>(*it->second)->size(); i++){
+                if (get<1>(*it->second)->at(i) == true){
+                    availableTimeSlots.push_back(it->first + hoursStrings.at(i));}
+        }}
         return availableTimeSlots;
     }
 
-    TimeSlots()
-    {
+    TimeSlots(){
         initials = {"D", "L", "K", "M", "J", "V", "S"};
         hoursStrings = {"6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm"};
 
         int newX = 400;
-        for (string day : initials)
-        {
+        for (string day : initials){
             hours = new vector<bool>(16, false);
-
-            int newY = 80;
-
             buttons = new vector<Button *>;
 
-            for (int i = 0; i < hours->size(); i++)
-            {
-
+            int newY = 80;
+            for (int i = 0; i < hours->size(); i++){
                 buttons->push_back(new Button("", newX, newY, 20, 20, ofColor(100)));
-
-                newY += 40;
-            }
+                newY += 40;}
+            
             tuple<vector<Button *> *, vector<bool> *> *tp = new tuple<vector<Button *> *, vector<bool> *>(buttons, hours);
             daysButtons[day] = tp;
             newX += 64;
@@ -71,17 +55,10 @@ public:
 
     void update()
     {
-        for (std::map<string, tuple<vector<Button *> *, vector<bool> *> *>::iterator it = daysButtons.begin(); it != daysButtons.end(); ++it)
-        {
-
-            for (int i = 0; i < get<0>(*it->second)->size(); i++)
-            {
-
-                if (get<0>(*it->second)->at(i)->clicked)
-                {
-
+        for (std::map<string, tuple<vector<Button *> *, vector<bool> *> *>::iterator it = daysButtons.begin(); it != daysButtons.end(); ++it){
+            for (int i = 0; i < get<0>(*it->second)->size(); i++){
+                if (get<0>(*it->second)->at(i)->clicked){
                     get<1>(*it->second)->at(i) = !get<1>(*it->second)->at(i);
-
                     get<0>(*it->second)->at(i)->clicked = false;
                 }
             }
